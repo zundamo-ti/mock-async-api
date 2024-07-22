@@ -1,0 +1,33 @@
+[project]
+name = "mock-async-api"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "zundamo-ti", email = "omoti67@gmail.com" }
+]
+dependencies = [
+    "requests>=2.32.3",
+    "fastapi>=0.111.1",
+    "uvicorn>=0.30.3",
+    "aiofiles>=24.1.0",
+    "httpx>=0.27.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "types-aiofiles>=24.1.0.20240626",
+    "types-requests>=2.32.0.20240712",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mock_async_api"]
